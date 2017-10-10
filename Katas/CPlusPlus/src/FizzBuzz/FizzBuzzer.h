@@ -1,8 +1,8 @@
-#include <string>
-#include <memory>
-
 #ifndef FIZZBUZZ_FIZZBUZZER_H
 #define FIZZBUZZ_FIZZBUZZER_H
+
+#include <string>
+#include <memory>
 
 class FizzBuzzer
 {

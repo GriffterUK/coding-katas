@@ -1,7 +1,7 @@
-#include "FizzBuzzer.h"
-
 #ifndef FIZZBUZZ_LOOKUPFIZZBUZZER_H
 #define FIZZBUZZ_LOOKUPFIZZBUZZER_H
+
+#include "FizzBuzzer.h"
 
 class LookupFizzBuzzer : public FizzBuzzer
 {

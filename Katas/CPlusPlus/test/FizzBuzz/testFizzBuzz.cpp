@@ -7,6 +7,7 @@
 // Various Implementations of FizzBuzz(ers)
 #include "../../src/FizzBuzz/SimpleFizzBuzzer.h"
 #include "../../src/FizzBuzz/LookupFizzBuzzer.h"
+#include "../../src/FizzBuzz/SteppedSetFizzBuzzer.h"
 
 
 // FIZZ-BUZZ KATA
@@ -44,7 +45,7 @@
 
 // ************************ The Tests ***************************
 
-class TesFizzBuzzShould: public ::testing::Test {
+class TestFizzBuzzShould: public ::testing::Test {
 
     std::list<FizzBuzzerPtr> fizzBuzzImplementations;
 
@@ -52,6 +53,7 @@ public:
     void SetUp(void) {
         fizzBuzzImplementations.push_back(SimpleFizzBuzzer::create());
         fizzBuzzImplementations.push_back(LookupFizzBuzzer::create());
+        fizzBuzzImplementations.push_back(SteppedSetFizzBuzzer::create());
     }
 
 public:
@@ -61,25 +63,25 @@ public:
 };
 
 
-TEST_F(TesFizzBuzzShould, GiveFizzWhenValueIsMultipleOfThree)
+TEST_F(TestFizzBuzzShould, GiveFizzWhenValueIsMultipleOfThree)
 {
     fizzBuzzBuilder()->forMultipleOf(3).
                        expectValueToBe("Fizz").build();
 }
 
-TEST_F(TesFizzBuzzShould, GiveBuzzWhenValueIsMultipleOfFive)
+TEST_F(TestFizzBuzzShould, GiveBuzzWhenValueIsMultipleOfFive)
 {
     fizzBuzzBuilder()->forMultipleOf(5).
                        expectValueToBe("Buzz").build();
 }
 
-TEST_F(TesFizzBuzzShould, GiveFizzBuzzWhenValueIsMultipleOfFifteen)
+TEST_F(TestFizzBuzzShould, GiveFizzBuzzWhenValueIsMultipleOfFifteen)
 {
     fizzBuzzBuilder()->forMultipleOf(15).
                        expectValueToBe("FizzBuzz").build();
 }
 
-TEST_F(TesFizzBuzzShould, GiveNumberWhenValueIsNotMultipleOfThreeOrFive)
+TEST_F(TestFizzBuzzShould, GiveNumberWhenValueIsNotMultipleOfThreeOrFive)
 {
     fizzBuzzBuilder()->excludingMultiplesOf(3).
                        excludingMultiplesOf(5).
