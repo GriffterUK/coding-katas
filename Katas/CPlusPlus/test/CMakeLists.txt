@@ -10,3 +10,4 @@ add_executable(testcodingkatas ${TESTCODINGKATASOURCES} ${TESTCODINGKATAHEADERS}
 add_dependencies(testcodingkatas gtest gmock)
 target_link_libraries(testcodingkatas gtest gmock libcodingkatas)
 
+add_test(NAME testcodingkatas COMMAND testcodingkatas)
