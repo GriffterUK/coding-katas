@@ -3,7 +3,10 @@
 #include "./FizzBuzzExpectationBuilder.h"
 
 #include "../../src/FizzBuzz/FizzBuzzer.h"
+
+// Various Implementations of FizzBuzz(ers)
 #include "../../src/FizzBuzz/SimpleFizzBuzzer.h"
+#include "../../src/FizzBuzz/LookupFizzBuzzer.h"
 
 
 // FIZZ-BUZZ KATA
@@ -48,6 +51,7 @@ class TesFizzBuzzShould: public ::testing::Test {
 public:
     void SetUp(void) {
         fizzBuzzImplementations.push_back(SimpleFizzBuzzer::create());
+        fizzBuzzImplementations.push_back(LookupFizzBuzzer::create());
     }
 
 public:
